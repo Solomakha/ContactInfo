@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         //Получаю доступ к контактам
         let contactStore = CNContactStore()
         //Объявляю ключи которые буду получать из контактов
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey, CNContactEmailAddressesKey] as [CNKeyDescriptor]
         //Запрос на получение контактов
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
         //Вызов метода получения всех контактов
