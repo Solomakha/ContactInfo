@@ -14,10 +14,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Вызываю функцию получения контактов
+       
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        //Вызываю функцию получения контактов
         fetchAllContacts()
     }
     //Объявляю функцию которая будет получить все контакты с телефонной книги

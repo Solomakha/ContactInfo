@@ -99,12 +99,11 @@
 		8439F5B528F80F110037DEDB /* ContactInfo */ = {
 			isa = PBXGroup;
 			children = (
-				8439F5B628F80F110037DEDB /* AppDelegate.swift */,
-				8439F5B828F80F110037DEDB /* SceneDelegate.swift */,
-				8439F5BA28F80F110037DEDB /* ViewController.swift */,
-				8439F5BC28F80F110037DEDB /* Main.storyboard */,
+				8456F1DC28F9FE4400824A62 /* Models */,
+				8456F1DD28F9FE5000824A62 /* View */,
+				8456F1DE28F9FE5800824A62 /* Controllers */,
+				8456F1DF28F9FE8000824A62 /* Delegates */,
 				8439F5BF28F80F140037DEDB /* Assets.xcassets */,
-				8439F5C128F80F140037DEDB /* LaunchScreen.storyboard */,
 				8439F5C428F80F140037DEDB /* Info.plist */,
 			);
 			path = ContactInfo;
@@ -125,6 +124,39 @@
 				8439F5D928F80F140037DEDB /* ContactInfoUITestsLaunchTests.swift */,
 			);
 			path = ContactInfoUITests;
+			sourceTree = "<group>";
+		};
+		8456F1DC28F9FE4400824A62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8456F1DD28F9FE5000824A62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8439F5BC28F80F110037DEDB /* Main.storyboard */,
+				8439F5C128F80F140037DEDB /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8456F1DE28F9FE5800824A62 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8439F5BA28F80F110037DEDB /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8456F1DF28F9FE8000824A62 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8439F5B628F80F110037DEDB /* AppDelegate.swift */,
+				8439F5B828F80F110037DEDB /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
