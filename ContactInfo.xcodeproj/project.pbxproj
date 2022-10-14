@@ -16,6 +16,7 @@
 		8439F5CE28F80F140037DEDB /* ContactInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439F5CD28F80F140037DEDB /* ContactInfoTests.swift */; };
 		8439F5D828F80F140037DEDB /* ContactInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439F5D728F80F140037DEDB /* ContactInfoUITests.swift */; };
 		8439F5DA28F80F140037DEDB /* ContactInfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439F5D928F80F140037DEDB /* ContactInfoUITestsLaunchTests.swift */; };
+		8456F1E128F9FF7100824A62 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456F1E028F9FF7100824A62 /* GroupsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8439F5D328F80F140037DEDB /* ContactInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8439F5D728F80F140037DEDB /* ContactInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoUITests.swift; sourceTree = "<group>"; };
 		8439F5D928F80F140037DEDB /* ContactInfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8456F1E028F9FF7100824A62 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		8456F1DC28F9FE4400824A62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8456F1E028F9FF7100824A62 /* GroupsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8439F5BB28F80F110037DEDB /* ViewController.swift in Sources */,
 				8439F5B728F80F110037DEDB /* AppDelegate.swift in Sources */,
 				8439F5B928F80F110037DEDB /* SceneDelegate.swift in Sources */,
+				8456F1E128F9FF7100824A62 /* GroupsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
