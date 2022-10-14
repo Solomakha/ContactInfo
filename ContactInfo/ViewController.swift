@@ -10,9 +10,14 @@ import Contacts
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //Вызываю функцию получения контактов
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         fetchAllContacts()
     }
     //Объявляю функцию которая будет получить все контакты с телефонной книги
@@ -28,6 +33,25 @@ class ViewController: UIViewController {
             try contactStore.enumerateContacts(with: fetchRequest, usingBlock: { contact, results in
                 //Операции над получеными контактами
                 print("\(contact.givenName)")
+                
+                for number in contact.phoneNumbers {
+                    switch number.label{
+                        case CNLabelPhoneNumberMobile:
+                        print("- Mobile: \(number.value.stringValue)")
+                    case CNLabelPhoneNumberMain:
+                        print("- Main: \(number.value.stringValue)")
+                    default:
+                        print("- Other: \(number.value.stringValue)")
+                }
+                    //print("- \(number.value.stringValue)")
+                }
+                
+                for email in contact.emailAddresses {
+                    
+                    print("Email: \(email.value)")
+                    
+                }
+                
             })
         }
         
@@ -38,3 +62,14 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+}
