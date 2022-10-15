@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        let nib = UINib(nibName: "MyTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "MyTableViewCell")
+        
         //Вызываю функцию получения контактов
         fetchAllContacts()
     }
@@ -72,11 +75,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         cell.textLabel?.text = model.group[indexPath.row].groupsTitle
-
-            return cell
+        return cell
     }
     
 }
