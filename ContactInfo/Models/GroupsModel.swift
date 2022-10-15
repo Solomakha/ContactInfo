@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct GroupsContent{
     var groupsTitle: String
-    var groupsImg: String
-    
+    var groupsImg: UIImage?
 }
 
 class GroupsModel{
@@ -19,14 +19,24 @@ class GroupsModel{
     init(){
         data()
     }
+    var logoImage :[UIImage?] = []
+    
+    
     
     func data(){
-        let gr1 = GroupsContent(groupsTitle: "Контакты", groupsImg: "")
-        let gr2 = GroupsContent(groupsTitle: "Повторяющиеся имена", groupsImg: "")
-        let gr3 = GroupsContent(groupsTitle: "Дубликаты номеров", groupsImg: "")
-        let gr4 = GroupsContent(groupsTitle: "Без имени", groupsImg: "")
-        let gr5 = GroupsContent(groupsTitle: "Нет номера", groupsImg: "")
-        let gr6 = GroupsContent(groupsTitle: "Нет електронной почты", groupsImg: "")
+        logoImage.append(UIImage(systemName: "person.crop.circle"))
+        logoImage.append(UIImage(systemName: "person.3"))
+        logoImage.append(UIImage(systemName: "phone"))
+        logoImage.append(UIImage(systemName: "person.fill.questionmark.rtl"))
+        logoImage.append(UIImage(systemName: "iphone.homebutton.slash"))
+        logoImage.append(UIImage(systemName: "mail"))
+        
+        let gr1 = GroupsContent(groupsTitle: "Контакты", groupsImg: logoImage[0])
+        let gr2 = GroupsContent(groupsTitle: "Повторяющиеся имена", groupsImg: logoImage[1])
+        let gr3 = GroupsContent(groupsTitle: "Дубликаты номеров", groupsImg: logoImage[2])
+        let gr4 = GroupsContent(groupsTitle: "Без имени", groupsImg: logoImage[3])
+        let gr5 = GroupsContent(groupsTitle: "Нет номера", groupsImg: logoImage[4])
+        let gr6 = GroupsContent(groupsTitle: "Нет електронной почты", groupsImg: logoImage[5])
         
         self.group = [gr1, gr2, gr3, gr4, gr5, gr6]
        
