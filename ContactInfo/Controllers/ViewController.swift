@@ -9,26 +9,26 @@ import UIKit
 import Contacts
 
 class ViewController: UIViewController {
-
+    //Объявление таблицы
     @IBOutlet weak var tableView: UITableView!
-    
+    //Вызов модели групп из файла
     let model: GroupsModel = GroupsModel()
-    
+    //Структура для заполнения данных вытащинных из телефонной книги
     struct FetchedContact {
         var name: String
         var surname: String
         var phoneNumber: [String]
         var email: String
     }
-    
+    //Массив данных вытащинных из телефонной книги
     var fetchContacts = [FetchedContact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        //Регистрация кастомного View ячейки таблицы
         let nib = UINib(nibName: "MyTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "MyTableViewCell")
         
@@ -43,16 +43,16 @@ class ViewController: UIViewController {
         let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey, CNContactEmailAddressesKey] as [CNKeyDescriptor]
         //Запрос на получение контактов
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
-        //Вызов метода получения всех контактов
+        //Вызываю метод получения всех контактов
         do {
             try contactStore.enumerateContacts(with: fetchRequest, usingBlock: { contact, results in
                 //Операции над получеными контактами
                 
-                let contactName = contact.givenName
-                let contactFamilyName = contact.familyName
-                let contactEmailAdress = contact.emailAddresses.first?.value ?? ""
-                let contactPhoneNumber: [String] = contact.phoneNumbers.map{ $0.value.stringValue}
-           
+                let contactName = contact.givenName //имя
+                let contactFamilyName = contact.familyName //фамилия
+                let contactEmailAdress = contact.emailAddresses.first?.value ?? "" //Email
+                let contactPhoneNumber: [String] = contact.phoneNumbers.map{ $0.value.stringValue} //номер телефона
+                // заполняю массив данными полученными из телефонной книги
                 self.fetchContacts.append(FetchedContact(name: contactName, surname: contactFamilyName, phoneNumber: contactPhoneNumber, email: String("\(contactEmailAdress)")))
                
             })
@@ -66,11 +66,12 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
+    //Указываю количество выводимых ячеек в таблице
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //Количество ячеек равно количеству групп
         return model.group.count
     }
-    
+    //Вызываю кастомный View ячейки таблицы и заполняя элементы ячейки данными
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         cell.grTitle.text = model.group[indexPath.row].groupsTitle
