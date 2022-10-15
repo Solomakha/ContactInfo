@@ -8,7 +8,10 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var grImg: UIImageView!
+    @IBOutlet weak var grTitle: UILabel!
+    @IBOutlet weak var contactCount: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
